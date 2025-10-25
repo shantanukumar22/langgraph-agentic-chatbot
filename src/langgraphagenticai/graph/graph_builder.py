@@ -10,6 +10,17 @@ class GraphBuilder():
         self.graph_builder.add_node("chatbot",self.basic_chatbot_node.process)
         self.graph_builder.add_edge(START,"chatbot")
         self.graph_builder.add_edge("chatbot",END)
+    def chatbot_with_tools_build_graph(self):
+         """
+        Builds an advanced chatbot graph with tool integration.
+        This method creates a chatbot graph that includes both a chatbot node 
+        and a tool node. It defines tools, initializes the chatbot with tool 
+        capabilities, and sets up conditional and direct edges between nodes. 
+        The chatbot node is set as the entry point.
+        """
+         ## defining the tool and the tool node
+         
+
     def setup_graph(self,usecase:str):
         """set's up the graph for the selected use-case"""
         if usecase=="Basic Chatbot":
