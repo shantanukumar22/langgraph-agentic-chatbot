@@ -43,3 +43,18 @@ class GraphBuilder():
         if usecase == "Chatbot With Web":
             self.chatbot_with_tools_build_graph()
         return self.graph_builder.compile()
+    def ai_news_builder_graph(self):
+        #adding of the nodes
+        self.graph_builder.add_node("fetch_news","")
+        self.graph_builder.add_node("summarize_news","")
+        self.graph_builder.add_node("save_result","")
+        ## adding the edges 
+        # self.graph_builder.add_edge(START,"node name") : instead of using this
+        #we will use something call set_entry_point 
+        self.graph_builder.set_entry_point("fetch_news")
+        self.graph_builder.add_edge("fetch_news","summarize_news")
+        self.graph_builder.add_edge("summarize_news","save_result")
+        self.graph_builder.set_finish_point("save_result") #wanted to try hehe
+        # self.graph_builder.add_node("save_result",END)
+
+
